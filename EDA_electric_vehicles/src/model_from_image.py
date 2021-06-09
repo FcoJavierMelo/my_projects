@@ -69,14 +69,17 @@ def model_from_image():
 
         df_ResNet50 = df_predictions(predictions_ResNet50, modelos)
 
-        fig = px.bar(df_EfficientNetB7, x="probabilidad", y="modelo", orientation='h')
+        col1, col2 = st.beta_columns(2)
 
-        fig.update_layout(title='Resultados modelo EfficientNetB7')
+        with col1:
+            fig = px.bar(df_EfficientNetB7, x="probabilidad", y="modelo", orientation='h')
 
-        st.plotly_chart(fig)
+            fig.update_layout(title='Resultados modelo EfficientNetB7')
 
-        fig = px.bar(df_ResNet50, x="probabilidad", y="modelo", orientation='h')
+            st.plotly_chart(fig)
+        with col2:
+            fig = px.bar(df_ResNet50, x="probabilidad", y="modelo", orientation='h')
 
-        fig.update_layout(title='Resultados modelo ResNet50')
+            fig.update_layout(title='Resultados modelo ResNet50')
 
-        st.plotly_chart(fig)
+            st.plotly_chart(fig)

@@ -166,6 +166,7 @@ def pollution(config):
                                                     {"variable": "Tipo", "year": "anio", "value": "Porcentaje"},
                                                     "Fuentes de generación por porcentaje en Europa",
                                                     600)
+
         st.plotly_chart(fig_bar_europe_share, use_container_width=False, **{'config': config})
 
     country = st.sidebar.selectbox("Pais", list_europe_countries)
